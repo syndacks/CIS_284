@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*the require_tree . means that this will include all other .css files*/
+/*in the same directory*/
