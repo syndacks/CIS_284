@@ -23,37 +23,11 @@
 		<h1><a href="#">Cowboy Up</a></h1>
 		<h2>Where the buffalo roam</h2>
 		<%= image_tag "cowboyup.jpg", size: "940x200" %>
-		<!--<img src="images/cowboyup.jpg" width="940" height="200" alt=""><!-- header image -->-->
+		<!--<img src="images/cowboyup.jpg" width="940" height="200" alt=""><!-- header image -->
 	</header><!-- end of header -->
 	
-	<nav><!-- top nav -->
-		<div class="menu">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a>
-			    <ul>
-   					<li><a href="#">The Ranch</a></li>
-   					<li><a href="#">History</a></li>
-   					<li><a href="">Vision</a></li>
-   				</ul>
-  			</li>
-				<li><a href="#">Products</a>
-					<ul>
-						<li><a href="#">Spurs</a></li>
-						<li><a href="#">Chaps</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Services</a>
-					<ul>
-						<li><a href="#">Rodeos</a></li>
-						<li><a href="#">Wrangling</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Contact Us</a></li>
-			</ul>
-		</div>
-	</nav><!-- end of top nav -->
-
+<!--this is a lot like a 'yield', it's saying render this partial called _nav -->
+<%= render :partial => 'shared/nav' %>
 
 	<section id="main"><!-- #main content and sidebar area -->
 		<section id="container"><!-- #container -->
