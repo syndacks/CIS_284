@@ -8,7 +8,8 @@
     
     <%= csrf_meta_tags %>
     <!--Rails has a special way of including stylehseets ('application.css/.js' tells it where to get the stylsheets from)-->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'screen', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'print', media: 'print', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   	
   	
@@ -39,7 +40,6 @@
 						
     		</section><!-- end of #content -->
     		</section><!-- end of #container -->
-    
     		<aside id="sidebar"><!-- sidebar -->
     				<h3>Things To Do</h3>
     					<ul>
