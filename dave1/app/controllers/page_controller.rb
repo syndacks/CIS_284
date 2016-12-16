@@ -18,6 +18,9 @@ class PageController < ApplicationController
   end
 
   def calendar
+    @time = Time.now
+    @month = 4
+    @year = 2013
   end
 
   def articles
