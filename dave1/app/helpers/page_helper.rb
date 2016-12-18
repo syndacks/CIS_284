@@ -2,8 +2,18 @@ module PageHelper
     
     def calendar(month, year)
         current_date = Date.new(year, month, 1)
+        
+        prev_month = month - 1
+        prev_year = year 
+        if( prev_month <= 0)
+           prev_month = 12
+           prev_year = year - 1
+        end
+        
+        cal = current_date.strftime("%B")
+        cal += link_to "Prev", "/page/calendar?month=#{prev_month}&year=#{prev_year}"
         day_of_week = current_date.strftime("%w").to_i
-        cal = "<table border = '1'><tr>"
+        cal  += "<table border = '1'><tr>"
         days = %w(Sun Mon Tue Wed Thu Fri Sat)
         days.each do | day |
             cal += "<td>#{day}</td>"
@@ -21,7 +31,7 @@ module PageHelper
         
         #loop to do in between rows
         
-        #loop to do last row
+        #loop to do last r
         
         cal += "</tr>"
         cal += "</tr></table>"
