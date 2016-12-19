@@ -2,23 +2,23 @@
    <div class="menu">
       <ul>
          <li>
-         	<%= nav_link_to "Home", "home", page_home_path, 'current_page' %></a></li>
+         	<%= nav_link_to "Home", "home", home_path, 'current_page' %></a></li>
          <li>
-            <%= nav_link_to "About", 'about_us', page_about_us_path, 'current_page' %></a>
+            <%= nav_link_to "About", 'about_us', about_us_path, 'current_page' %></a>
             <ul>
-               <li><%=nav_link_to "Contact Us", 'contact_us', page_contact_us_path, 'current_page' %></li>
+               <li><%=nav_link_to "Contact Us", 'contact_us', contact_us_path, 'current_page' %></li>
             </ul>
          </li>
-         <li><%=link_to "Products", page_products_path %></li>
-         <li><%=link_to "Calendar", page_calendar_path %></li>
+         <li><%=link_to "Products", products_path %></li>
+         <li><%=link_to "Calendar", calendar_path %></li>
          <li>
-            <%= link_to "Articles", page_articles_path %></a>
+            <%= link_to "Articles", articles_path %></a>
             <ul>
-               <li><%=link_to "Newsletter", page_newsletter_path %></li>
+               <li><%=link_to "Newsletter", newsletter_path %></li>
             </ul>
          </li>
-         <li><%=link_to "Blog", page_blog_path %></li>
-         <li><%=link_to "Login", page_login_path %></li>
+         <li><%=link_to "Blog", blog_path %></li>
+         <li><%=link_to "Login", login_path %></li>
       </ul>
    </div>
 </nav> <!-- end of top nav -->

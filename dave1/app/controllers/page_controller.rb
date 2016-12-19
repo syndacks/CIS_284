@@ -6,6 +6,11 @@ class PageController < ApplicationController
   end
 
   def contact_us
+    @name = params["name"]
+    if @name == ""
+      @error_msg = "Must enter your name!"
+    end
+    @email = params["email"]
   end
 
   def products

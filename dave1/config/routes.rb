@@ -1,24 +1,29 @@
 Rails.application.routes.draw do
   
-  get 'page/home'
+  #get 'page/home'
+  get 'home' => 'page#home'
 
-  get 'page/about_us'
+  #get 'page/about_us'
+  get 'about_us' => 'page#about_us'
 
-  get 'page/contact_us'
-
-  get 'page/products'
-
-  get 'page/newsletter'
-
-  get 'page/blog'
+  # get 'contact_us' =>'page#contact_us'
+  # post 'contact_us' =>'page#contact_us'
   
-  get 'page/calendar(/:year(/:month))' => 'page#calendar', :as => 'calendar'
+  match 'contact_us'=>'page#contact_us', :via => [:post, :get]
 
-  get 'page/calendar'
+  get 'products' =>'page#products'
 
-  get 'page/articles'
+  get 'newsletter' =>'page#newsletter'
 
-  get 'page/login'
+  get 'blog' => 'page#blog'
+  
+  get 'calendar(/:year(/:month))' => 'page#calendar', :as => 'calendar'
+
+  get 'calendar' => 'page#calendar'
+
+  get 'articles' => 'page#articles'
+
+  get 'login' => 'page#login'
 
   get 'dave/teach'
 
@@ -30,6 +35,8 @@ Rails.application.routes.draw do
   get 'say/hello' => 'say#hello'
   get 'say/goodbye'
   get 'say/something'
+  
+  root 'page#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

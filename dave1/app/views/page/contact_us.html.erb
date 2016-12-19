@@ -1,2 +1,17 @@
-<h1>Page#contact_us</h1>
-<p>Find me in app/views/page/contact_us.html.erb</p>
+<h1>Contact Us</h1>
+
+
+Your name is <%= @name %><br/>
+Your e-mail is <%= @email %><br/>
+
+
+<%= @error_msg %><br/>
+<%= form_for contact_us_path, :method => "POST" do %>
+    <%= label_tag :name, "Enter your full name: " %>
+    <%= text_field_tag :name, @name %>
+    <br/>
+    <%= label_tag :email, "Enter your e-mail address: " %>
+    <%= email_field_tag :email, @email %><br/>
+    <%= submit_tag "Submit" %>
+
+<% end %>
