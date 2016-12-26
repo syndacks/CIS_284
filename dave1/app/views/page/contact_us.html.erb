@@ -4,14 +4,37 @@
 Your name is <%= @name %><br/>
 Your e-mail is <%= @email %><br/>
 
-
-<%= @error_msg %><br/>
-<%= form_for contact_us_path, :method => "POST" do %>
-    <%= label_tag :name, "Enter your full name: " %>
-    <%= text_field_tag :name, @name %>
-    <br/>
-    <%= label_tag :email, "Enter your e-mail address: " %>
-    <%= email_field_tag :email, @email %><br/>
-    <%= submit_tag "Submit" %>
+<pre>
+<% params.each do |key, value| #DEBUGGING ONLY!! %>
+    <%= key + " ==> " + value %>
+<% end %>
+</pre>
+<% if !@submitted || @form_error %>
+    <%= @error_msg %><br/>
+    <%= form_for contact_us_path, :method => "POST" do %>
+        <%= label_tag :name, "Enter your full name: " %>
+        <%= text_field_tag :name, @name, placeholder: "Enter your name" %><br/>
+        <%= label_tag :email, "Enter your e-mail address: " %>
+        <%= email_field_tag :email, @email %><br/>
+        <%= label_tag :question, "Enter your question: " %><br/>
+        <%= text_area_tag :question, @question, size: "35x10" %><br/>
+    
+        <%= radio_button_tag :gender, "Male" %> Male <br/>
+        <%= radio_button_tag :gender, "Female" %> Female <br/>
+        <%= check_box_tag :newsletter, "newsletter", @newsletter %> Subscribe to my newsletter?<br/>
+        <%= select_tag :product, options_for_select(
+            [
+                ['Skis', 1],
+                ['Poles', 2],
+                ['Boots', 3],
+            ], 1) %>
+        
+    
+    
+        <%= submit_tag "Submit" %>
+    
+    <% end %>
+<% else %>
+    Thanks for your information.
 
 <% end %>

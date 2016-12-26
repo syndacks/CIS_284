@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :products
+  
+  
   #get 'page/home'
   get 'home' => 'page#home'
 
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
   
   match 'contact_us'=>'page#contact_us', :via => [:post, :get]
 
-  get 'products' =>'page#products'
+  # get 'products' =>'page#products' WE are getting rid of this b/c resources :products (from db:migrate)
 
   get 'newsletter' =>'page#newsletter'
 
