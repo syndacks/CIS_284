@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :products
   
   
+  get 'people/index'
+
   #get 'page/home'
   get 'home' => 'page#home'
 
