@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+movie = Movie.create(name: "Dacks' Book", director: "Dacks", description: "A bike across USA", year: 2013, length: 100, format: "beta")
+
+puts movie.inspect
