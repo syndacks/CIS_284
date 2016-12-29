@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  director: MyString
+  description: MyText
+  year: 1
+  length: 9.99
+  format: MyString
+
+two:
+  name: MyString
+  director: MyString
+  description: MyText
+  year: 1
+  length: 9.99
+  format: MyString

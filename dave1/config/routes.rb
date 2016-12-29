@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
   
+  resources :movies
   get 'people/index'
 
   #get 'page/home'

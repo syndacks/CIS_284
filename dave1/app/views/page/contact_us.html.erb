@@ -4,13 +4,18 @@
 Your name is <%= @name %><br/>
 Your e-mail is <%= @email %><br/>
 
-<pre>
-<% params.each do |key, value| #DEBUGGING ONLY!! %>
-    <%= key + " ==> " + value %>
+<% if flash['error'] %>
+    <div class='error'><%= flash['error'] %></div>
 <% end %>
-</pre>
+
+<!--<pre>-->
+<% params.each do |key, value| #DEBUGGING ONLY!! %>
+<!--    <%= key + " ==> " + value %>-->
+<!--<% end %>-->
+<!--</pre>-->
+
 <% if !@submitted || @form_error %>
-    <%= @error_msg %><br/>
+    <br/>
     <%= form_for contact_us_path, :method => "POST" do %>
         <%= label_tag :name, "Enter your full name: " %>
         <%= text_field_tag :name, @name, placeholder: "Enter your name" %><br/>
