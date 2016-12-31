@@ -6,6 +6,26 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-movie = Movie.create(name: "Dacks' Book", director: "Dacks", description: "A bike across USA", year: 2013, length: 100, format: "beta")
 
-puts movie.inspect
+require 'faker'
+include Faker
+
+formats = %w(Beta VHS IMAX HD SuperHD 4k DVD BlueRay)
+images = %w(skis.jpg boots.jpg poles.jpg)
+
+Movie.destroy_all
+
+
+
+25.times do
+    movie = Movie.create(name: "#{Company.bs}",
+            director: "#{Name.name}",
+            description: Lorem.paragraphs.join("<br/>").html_safe,
+            year: rand(1940..2013),
+            length: rand(20..240),
+            format: formats[rand(formats.length)],
+            image: "movies/" + images[rand(images.length)],
+            thumbnail: "movies/" + images[rand(images.length)]
+            )
+    puts movie.inspect
+end

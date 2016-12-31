@@ -2,9 +2,13 @@
 
 <h1>Movies</h1>
 
+<%= link_to "Prev", movies_path(page:@page-1) %>
+<%= link_to "Next", movies_path(page:@page+1) %>
+
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Director</th>
       <th>Description</th>
@@ -19,9 +23,10 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= link_to movie.name, movie_path(movie) %></td>
+        <td><%=movie.id%></td>
+        <td><%= link_to movie.proper_name, movie_path(movie) %></td>
         <td><%= movie.director %></td>
-        <td><%= movie.description %></td>
+        <td><%= truncate(movie.description.html_safe, length: 20) %></td>
         <td><%= movie.year %></td>
         <td><%= movie.length %></td>
         <td><%= movie.format %></td>

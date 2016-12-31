@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @movie.name %>
+  <%= @movie.proper_name %>
 </p>
 
 <p>
@@ -12,7 +12,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @movie.description %>
+  <%= @movie.description.html_safe %>
 </p>
 
 <p>
@@ -32,7 +32,10 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @movie.image %>
+  <% if @movie.image %>
+    <%= image_tag @movie.image %>
+  <% end %>
+    
 </p>
 
 

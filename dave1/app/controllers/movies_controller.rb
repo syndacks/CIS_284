@@ -4,7 +4,8 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    @page = params['page'].to_i
+    @movies = Movie.limit(5).offset(@page*5)
   end
 
   # GET /movies/1
